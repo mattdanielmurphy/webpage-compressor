@@ -1,17 +1,25 @@
 {
   "name": "webpage-compressor",
-  "private": true,
+  "version": "1.0.0",
   "type": "module",
+  "bin": {
+    "compress-html": "./dist/compress-html.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "postbuild": "grep -q '^#!/usr/bin/env node' dist/compress-html.js || sed -i '' '1s|^|#!/usr/bin/env node\\n|' dist/compress-html.js && chmod +x dist/compress-html.js"
+  },
   "devDependencies": {
-    "@types/bun": "latest",
     "@types/node": "^25.0.3",
-    "ts-node": "^10.9.2"
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "cheerio": "^1.1.2",
-    "clipboardy": "^5.0.2"
+    "clipboardy": "^5.0.2",
+    "domhandler": "^5.0.3"
   }
 }

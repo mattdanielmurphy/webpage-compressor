@@ -12,7 +12,8 @@
     // Bundler mode
     "moduleResolution": "NodeNext",
     "verbatimModuleSyntax": true,
-    "noEmit": true,
+    "noEmit": false,
+    "outDir": "dist",
     // Best practices
     "strict": true,
     "skipLibCheck": true,
